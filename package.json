@@ -10,6 +10,7 @@
   "author": "Kat Reinhart",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.5.6",
     "express": "^4.15.3",
     "mongodb": "^2.2.28",
     "react": "^15.5.4",
