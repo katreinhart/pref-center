@@ -2,9 +2,9 @@ import React from 'react';
 
 const Header = (props) => {
   return (
-    <h2 className="Header text-center">
+    <h3 className="Header">
       {props.message}
-    </h2>
+    </h3>
   )
 }
 

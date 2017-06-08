@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header';
-import List from './list';
+import SortableComponent from './list';
 
 class App extends Component {
   state = {
@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className = "App">
         <Header message={this.state.pageHeader}/>
-        <List />
+        <SortableComponent />
       </div>
     )
   }

@@ -1,0 +1,43 @@
+/*
+Colors: #424D63;
+        #545D75;
+        #CFEC93;
+*/
+
+.container {
+  margin: 0 auto;
+}
+
+nav {
+  background-color: #424D63;
+  text-align: right;
+  color: white;
+  min-height: 45px;
+  padding: 10px 0;
+}
+
+nav ul li {
+  display: inline;
+  padding-right: 10px;
+}
+
+.menu-box {
+  background-color: #545D75;
+  color: white;
+  padding: 10px;
+}
+
+.main {
+  background-color: #BADA55;
+  padding: 10px;
+  margin: 0;
+}
+
+.main h3 {
+  text-align: center;
+}
+
+.sortable-list {
+  list-style: none;
+  color: #BADA55;
+}
