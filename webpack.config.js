@@ -9,7 +9,11 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader'
-      }
+      },
+      {
+        test: /\.scss$/,
+        loaders: ["style-loader", "css-loader", "sass-loader"]
+      },
     ]
   }
 };

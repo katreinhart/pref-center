@@ -1,14 +1,19 @@
 import config from './config';
 import apiRouter from './api';
-
+import mongoose from 'mongoose';
 import express from 'express';
+import bodyParser from 'body-parser';
 const server = express();
+
+var Preferences = require('./model/prefs.js');
 
 server.set('view engine', 'ejs');
 
+mongoose.connect('mongodb://kat-test:asdf1234@ds157621.mlab.com:57621/kat-mern-comment-box');
+
 server.get('/', (req, res) => {
   res.render('index', {
-    content: 'Hello Express and <em>EJS</em>!'
+    content: 'Hello Preference Center!'
   });
 });
 

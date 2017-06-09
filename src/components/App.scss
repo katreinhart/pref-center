@@ -28,7 +28,6 @@ nav ul li {
 }
 
 .main {
-  background-color: #BADA55;
   padding: 10px;
   margin: 0;
 }
@@ -39,5 +38,9 @@ nav ul li {
 
 .sortable-list {
   list-style: none;
-  color: #BADA55;
+}
+
+.list-item {
+  border: 1px solid grey;
+  background-color: #BADA55;
 }
