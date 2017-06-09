@@ -1,2 +1,4 @@
 node_modules/
 playground/
+public/css/skeleton.css
+public/css/normalize.css
