@@ -25,7 +25,7 @@ router.route('/prefs')
   })
  .post(function(req, res) {
     var prefs = new Preferences();
-    console.log(req.body.name); // this is an empty object???
+    console.log(req.body); // this is an empty object???
     // prefs.userName = req.body.name;
     prefs.id = Date.now();
     prefs.preferences = req.body.preferences;
