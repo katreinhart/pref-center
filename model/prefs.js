@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var PrefsSchema = new Schema ({
   id: Number,
   userName: String,
-  preferences: [{body: String}]
+  preferences: [String]
 });
 
 module.exports = mongoose.model('Preferences', PrefsSchema);
