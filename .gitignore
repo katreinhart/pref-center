@@ -9,7 +9,7 @@ public/css/normalize.css
 .env.test.local
 .env.production.local
 
-./config.js
+config.js
 
 npm-debug.log*
 yarn-debug.log*
