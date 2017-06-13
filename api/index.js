@@ -27,7 +27,7 @@ router.route('/prefs')
  .post(function(req, res) {
     var prefs = new Preferences();
     prefs.userName = req.body.name;
-    prefs.id = Date.now();
+    prefs.createdAt = Date.now();
     prefs.preferences = req.body.preferences;
     prefs.save(function(err) {
       if (err)
@@ -50,7 +50,6 @@ router.route('/prefs/:id')
   .put(function(req, res) {
     let uid = mongoose.Types.ObjectId( req.params.id );
     Preferences.findById(uid, function (err, pref) {
-      console.log(req.body);
       if(err) res.send(err);
       (req.body.userName) ? pref.name = req.body.userName : null;
       (req.body.preferences) ? pref.preferences = req.body.preferences : null;

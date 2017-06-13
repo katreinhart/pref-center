@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var PrefsSchema = new Schema ({
-  id: Number,
+  createdAt: Number,
   userName: String,
   preferences: [String]
 });
