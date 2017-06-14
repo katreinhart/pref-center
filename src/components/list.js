@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { SortableContainer, SortableHandle, SortableElement, arrayMove } from 'react-sortable-hoc';
 
+// TODO: rewrite this entire component. 
+
 const SortableItem = SortableElement(({value, id}) =>
   <li className="list-item" key={id}><DragHandle />{value}<input type="checkbox"></input></li>
 );

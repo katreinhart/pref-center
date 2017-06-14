@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './header';
 import SortableComponent from './list';
 
-import './App.scss';
+import '../styles/App.scss';
 
 class App extends Component {
   state = {
