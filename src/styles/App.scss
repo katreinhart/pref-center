@@ -4,21 +4,45 @@ Colors: #424D63;
         #CFEC93;
 */
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   margin: 0 auto;
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+}
+
+header {
+  background-color: darken( #424D63, 10%);
+  min-height: 25px;
+  text-align: left;
+  font-family: Georgia, serif;
+  font-style: italic;
+  padding: 10px;
+  color: white;
 }
 
 nav {
   background-color: #424D63;
   text-align: right;
   color: white;
-  min-height: 45px;
+  min-height: 35px;
   padding: 10px 0;
 }
 
 nav ul li {
   display: inline;
   padding-right: 10px;
+}
+
+.preference-menu {
+  min-height: 500px;
 }
 
 .menu-box {
@@ -42,5 +66,23 @@ nav ul li {
 
 .list-item {
   border: 1px solid grey;
-  background-color: #BADA55;
+  background-color: #CFEC93;
+  width: 90%;
+}
+
+.disable-checkbox {
+  display: inline-block;
+  text-align: right;
+}
+
+.disabled {
+  color: grey;
+  text-decoration: line-through;
+  background-color: lighten(#CFEC93, 20%);
+}
+
+footer {
+  background-color: #545D75;
+  color: white;
+  padding: 5px 0 5px 10px;
 }

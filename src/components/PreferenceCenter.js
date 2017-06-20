@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { SortableContainer, SortableHandle, SortableElement, arrayMove } from 'react-sortable-hoc';
 import axios from 'axios';
 
+// import '../styles/PreferenceCenter.scss';
+
 const SortablePreference = SortableElement(({value, id}) =>
   <li className = "list-item"
     key= {id} ><DragHandle />
     {value}
-    <input type="checkbox"></input>
+    <input type="checkbox" id="disable-checkbox" ></input>
   </li>
 )
 
@@ -20,12 +22,15 @@ const SortablePreferences = SortableContainer (({items}) => {
             key={`item-${value}`}
             index={index}
             value={value}
+            // isDisabled={}
           />
         ))}
       </ul>
     )
   }
 );
+
+
 
 class PreferenceCenter extends Component  {
   state = {
@@ -83,11 +88,7 @@ class PreferenceCenter extends Component  {
 }
 
 PreferenceCenter.propTypes = {
-  customerID: React.PropTypes.number
-}
-
-PreferenceCenter.defaultProps = {
-  message: 'Hello!'
+  customerID: React.PropTypes.string
 }
 
 export default PreferenceCenter;

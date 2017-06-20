@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './header';
-// import SortableComponent from './list';
 import PreferenceCenter from './PreferenceCenter';
 
 import '../styles/App.scss';
@@ -18,14 +17,6 @@ class App extends Component {
       </div>
     )
   }
-}
-
-App.propTypes = {
-  message: React.PropTypes.string
-}
-
-App.defaultProps = {
-  message: 'Hello!'
 }
 
 export default App;
