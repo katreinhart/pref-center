@@ -7,13 +7,14 @@ import '../styles/App.scss';
 
 class App extends Component {
   state = {
-      pageHeader: "Preference Center"
+      pageHeader: "Preference Center",
+      customerID: '593f40e40c4afe500bcb43cb' // hard code this until it works
   };
   render() {
     return (
       <div className = "App">
         <Header message={this.state.pageHeader}/>
-        <PreferenceCenter  />
+        <PreferenceCenter customerID={this.state.customerID} />
       </div>
     )
   }
