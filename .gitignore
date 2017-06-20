@@ -3,6 +3,8 @@ playground/
 public/css/skeleton.css
 public/css/normalize.css
 
+src/components/list.js
+
 .DS_Store
 .env.local
 .env.development.local

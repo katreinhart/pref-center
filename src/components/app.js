@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './header';
-import SortableComponent from './list';
+// import SortableComponent from './list';
+import PreferenceCenter from './PreferenceCenter';
 
 import '../styles/App.scss';
 
@@ -12,7 +13,7 @@ class App extends Component {
     return (
       <div className = "App">
         <Header message={this.state.pageHeader}/>
-        <SortableComponent />
+        <PreferenceCenter  />
       </div>
     )
   }
