@@ -7,7 +7,8 @@ import '../styles/App.scss';
 class App extends Component {
   state = {
       pageHeader: "Preference Center",
-      customerID: '593f40e40c4afe500bcb43cb' // hard code this until it works
+      customerID: '593f40e40c4afe500bcb43cb'
+      //
   };
   render() {
     return (

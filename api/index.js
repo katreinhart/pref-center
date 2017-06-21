@@ -33,7 +33,8 @@ router.route('/prefs')
       if (err)
         res.send(err);
       res.json({
-        message: 'Prefs successfully added!'
+        message: 'Prefs successfully added!'//,
+        // customerID: prefs._uid
       });
     });
   });

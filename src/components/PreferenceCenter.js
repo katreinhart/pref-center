@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { SortableContainer, SortableHandle, SortableElement, arrayMove } from 'react-sortable-hoc';
 import axios from 'axios';
 
-// import '../styles/PreferenceCenter.scss';
-
 const SortablePreference = SortableElement(({value, id}) =>
   <li className = "list-item"
     key= {id} ><DragHandle />
@@ -22,15 +20,12 @@ const SortablePreferences = SortableContainer (({items}) => {
             key={`item-${value}`}
             index={index}
             value={value}
-            // isDisabled={}
           />
         ))}
       </ul>
     )
   }
 );
-
-
 
 class PreferenceCenter extends Component  {
   state = {
@@ -46,22 +41,13 @@ class PreferenceCenter extends Component  {
           this.setState({
             items: res.data.preferences
           })
-        } else {
-          this.setState({
-            items: this.state.defaultItems
-          })
         }
       }).catch(err => {
         console.error(err);
+        this.setState({
+          items: this.state.defaultItems
+        })
       });
-  }
-  // handlePrefsUpdate
-  handlePrefsUpdate() {
-
-  }
-  // hanldePrefsSubmit
-  handlePrefsSubmit () {
-
   }
 
   componentDidMount () {
