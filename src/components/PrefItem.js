@@ -5,7 +5,7 @@ import '../styles/PrefItem.scss';
 class PrefItem extends Component {
   render() {
     return(
-      <div className="pref-item">{this.props.value}</div>
+      <div className="pref-item"><span>x</span>{this.props.value}</div>
     )
   }
 }

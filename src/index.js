@@ -5,9 +5,16 @@ import { Provider } from 'react-redux';
 
 import App from './components/App';
 import rootReducer from './reducers';
+import { addPref } from './actions';
 
-const store = createStore(rootReducer);
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
 store.subscribe(() => console.log('store', store.getState()));
+store.dispatch(addPref("Baby"));
+console.log(store.getState());
 
 ReactDOM.render(
   <Provider store={store}>

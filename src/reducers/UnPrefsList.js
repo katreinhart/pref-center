@@ -16,3 +16,5 @@ function unPrefsList(state = defaultPrefs, action) {
       return state;
   }
 }
+
+export default unPrefsList;
