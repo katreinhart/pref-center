@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { SortableContainer, SortableHandle, SortableElement, arrayMove } from 'react-sortable-hoc';
 import axios from 'axios';
 
+import PrefItem from './PrefItem';
+import UnPrefsList from './UnPrefsList';
+
 const SortablePreference = SortableElement(({value, id}) =>
   <li className = "list-item"
     key= {id} ><DragHandle />
-    {value}
-    <input type="checkbox" id="disable-checkbox" ></input>
+    <PrefItem value={value} />
   </li>
 )
 
@@ -29,11 +31,11 @@ const SortablePreferences = SortableContainer (({items}) => {
 
 class PreferenceCenter extends Component  {
   state = {
-    defaultItems: ['Womens', 'Mens', 'Kids', 'Dogs', 'Cats'],
+    defaultItems: ['Womens', 'Mens', 'Kids', 'Boys', 'Girls', 'Home', 'Baby', 'Maternity'],
     url: `http://localhost:8080/api/prefs/${this.props.customerID}`,
     items: []
   }
-  // loadPrefsFromServer
+  
   loadPrefsFromServer(){
     axios.get(this.state.url)
       .then(res => {
@@ -56,7 +58,7 @@ class PreferenceCenter extends Component  {
 
   onSortEnd = ({oldIndex, newIndex}) => {
     this.setState({
-        items: arrayMove(this.state.items, oldIndex, newIndex)
+      items: arrayMove(this.state.items, oldIndex, newIndex)
     });
     axios.put(this.state.url, {
       "preferences": this.state.items
@@ -65,10 +67,17 @@ class PreferenceCenter extends Component  {
 
   render() {
     return(
-      <SortablePreferences
-        items = {this.state.items}
-        onSortEnd = {this.onSortEnd}
-      />
+      <div className="prefs-center">
+        <div className="pref-list columns six">
+          <SortablePreferences
+            items = {this.state.items}
+            onSortEnd = {this.onSortEnd}
+          />
+        </div>
+        <div className="unprefs-list columns six">
+          <UnPrefsList />
+        </div>
+      </div>
     )
   }
 }

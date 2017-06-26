@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import IMPORT_PREFS from '../actions';
+import prefsList from './PrefsList';
 
 function prefs(state = [], action) {
   switch (action.type) {
@@ -10,6 +11,6 @@ function prefs(state = [], action) {
   }
 }
 
-const rootReducer = combineReducers({ prefs });
+const rootReducer = combineReducers({ prefs, prefsList });
 
 export default rootReducer;
