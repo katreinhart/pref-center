@@ -18,6 +18,7 @@ export function addPref(value) {
 }
 
 export function removePref(value) {
+  console.log('removing pref', value)
   return {
     type: REMOVE_PREF,
     value

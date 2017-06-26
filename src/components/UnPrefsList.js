@@ -14,7 +14,7 @@ class UnPrefsList extends Component {
           {
             this.props.unprefs.map((item, index) => {
               return (
-                <li className="list-item" key={index}><span onClick={(item) => addPref(item)} >+</span> {item}</li>
+                <li className="list-item" key={index}><span onClick={() => this.props.addPref(item)} >+</span> {item}</li>
               )
             })
           }
@@ -30,4 +30,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, null)(UnPrefsList);
+export default connect(mapStateToProps, { addPref })(UnPrefsList);

@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { removePref } from '../actions';
 
 import '../styles/PrefItem.scss';
 
 class PrefItem extends Component {
   render() {
     return(
-      <div className="pref-item"><span>x</span>{this.props.value}</div>
+      <div className="pref-item"><span onClick={() => {this.props.removePref(this.props.value)}}>x</span> {this.props.value}</div>
     )
   }
 }
 
-export default PrefItem;
+function mapStateToProps(state) {
+  return {
+    ...state
+  }
+}
+
+export default connect(mapStateToProps, { removePref })(PrefItem);
