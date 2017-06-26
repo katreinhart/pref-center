@@ -43,6 +43,7 @@ class PreferenceCenter extends Component  {
       <div className="prefs-center">
         <div className="pref-list columns six">
           <PrefsList
+            useDragHandle
             items = {this.state.items}
             onSortEnd = {this.onSortEnd}
           />

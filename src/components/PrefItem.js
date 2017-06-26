@@ -14,7 +14,6 @@ class PrefItem extends Component {
 
 function mapStateToProps(state) {
   return {
-    ...state
   }
 }
 
