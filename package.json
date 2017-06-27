@@ -19,7 +19,9 @@
     "mongoose": "^4.10.5",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-sortable-hoc": "^0.6.3"
+    "react-redux": "^5.0.5",
+    "react-sortable-hoc": "^0.6.3",
+    "redux": "^3.7.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

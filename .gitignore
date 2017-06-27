@@ -6,7 +6,7 @@ public/bundle.js
 
 src/components/list.js
 
-.DS_Store
+*.DS_Store
 .env.local
 .env.development.local
 .env.test.local
