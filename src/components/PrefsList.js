@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import PrefItem from './PrefItem';
 import { removePref } from '../actions';
 
-const DragHandle = SortableHandle(() => <span>&#9776; </span>);
+const DragHandle = SortableHandle(() => <span className="drag-handle">&#9776; </span>);
 
 const SortablePreference = SortableElement(({value, id}) =>
   <li className = "list-item"

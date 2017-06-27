@@ -39,14 +39,19 @@ class PreferenceCenter extends Component  {
   render() {
     return(
       <div className="prefs-center">
-        <div className="pref-list columns six">
-          <PrefsList
-            useDragHandle
-            onSortEnd = {this.onSortEnd}
-          />
-        </div>
-        <div className="unprefs-list columns six">
-          <UnPrefsList />
+        <div className="row"><p>Help us show you what you want to see on your homepage! You can add, remove, and re-order your preferences here.</p></div>
+        <div className="row">
+          <div className="pref-list columns six">
+            <h4>Things I want to see</h4>
+            <PrefsList
+              useDragHandle
+              onSortEnd = {this.onSortEnd}
+            />
+          </div>
+          <div className="unprefs-list columns six">
+            <h4>Things I don't need to see</h4>
+            <UnPrefsList />
+          </div>
         </div>
       </div>
     )

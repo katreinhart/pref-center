@@ -6,11 +6,15 @@ class UnPrefsList extends Component {
   render() {
     return (
       <div>
-        <ul>
+        <ul className="unprefs-list">
           {
             this.props.unprefs.map((item, index) => {
               return (
-                <li className="list-item" key={index}><span onClick={() => this.props.addPref(item)} >+</span> {item}</li>
+                <li className="list-item un" key={index}>
+                  <span
+                    onClick={() => this.props.addPref(item)}
+                    className="add-button"
+                    >&#x2795;</span> {item}</li>
               )
             })
           }

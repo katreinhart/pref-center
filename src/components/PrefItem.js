@@ -7,7 +7,10 @@ import '../styles/PrefItem.scss';
 class PrefItem extends Component {
   render() {
     return(
-      <div className="pref-item"><span onClick={() => {this.props.removePref(this.props.value)}}>x</span> {this.props.value}</div>
+      <div className="pref-item"><span
+        className="remove-button"
+        onClick={() => {this.props.removePref(this.props.value)}}
+        >	&#x2715;</span>{' '}{this.props.value}</div>
     )
   }
 }

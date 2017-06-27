@@ -9,6 +9,12 @@ body {
   padding: 0;
 }
 
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
@@ -64,26 +70,40 @@ nav ul li {
   list-style: none;
 }
 
+.unprefs-list {
+  list-style: none;
+}
+
 .list-item {
   border: 1px solid grey;
   background-color: #CFEC93;
   width: 90%;
+  padding: 5px;
+  padding-left: 10px;
+}
+
+.list-item.un {
+  background-color: lighten(#CFEC93, 20%);
+  color: #666;
+  font-style: italic;
 }
 
 .pref-item {
   display: inline-block;
+  padding-left: 10px;
+  font-weight: bold;
 }
 
-
-.disable-checkbox {
-  display: inline-block;
-  text-align: right;
+.add-button, .remove-button {
+  font-size: 1.4rem;
 }
 
-.disabled {
-  color: grey;
-  text-decoration: line-through;
-  background-color: lighten(#CFEC93, 20%);
+.add-button, .remove-button {
+  cursor: pointer;
+}
+
+.drag-handle {
+  cursor: move;
 }
 
 footer {
