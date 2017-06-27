@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addPref } from '../actions';
 
-class UnPrefsList extends Component {
+class CategoriesList extends Component {
   render() {
     return (
       <div>
-        <ul className="unprefs-list">
+        <ul className="cats-list">
           {
-            this.props.unprefs.map((item, index) => {
+            this.props.categories.map((item, index) => {
               return (
                 <li className="list-item un" key={index}>
                   <span
@@ -26,8 +26,8 @@ class UnPrefsList extends Component {
 
 function mapStateToProps(state) {
   return {
-    unprefs: state.unPrefsList
+    categories: state.categoriesList
   }
 }
 
-export default connect(mapStateToProps, { addPref })(UnPrefsList);
+export default connect(mapStateToProps, { addPref })(CategoriesList);

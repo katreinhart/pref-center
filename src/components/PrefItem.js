@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removePref } from '../actions';
 
-import '../styles/PrefItem.scss';
-
 class PrefItem extends Component {
   render() {
     return(

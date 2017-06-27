@@ -4,7 +4,7 @@ import { arrayMove } from 'react-sortable-hoc';
 import { connect } from 'react-redux';
 
 import PrefItem from './PrefItem';
-import UnPrefsList from './UnPrefsList';
+import CategoriesList from './CategoriesList';
 import PrefsList from './PrefsList';
 
 import { sortPrefs, importPrefs } from '../actions';
@@ -42,15 +42,17 @@ class PreferenceCenter extends Component  {
         <div className="row"><p>Help us show you what you want to see on your homepage! You can add, remove, and re-order your preferences here.</p></div>
         <div className="row">
           <div className="pref-list columns six">
-            <h4>Things I want to see</h4>
+            <h4>My Categories</h4>
+            <p>Things I want to see! <em>Click & drag to reorder.</em></p>
             <PrefsList
               useDragHandle
               onSortEnd = {this.onSortEnd}
             />
           </div>
-          <div className="unprefs-list columns six">
-            <h4>Things I don't need to see</h4>
-            <UnPrefsList />
+          <div className="cats-list columns six">
+            <h4>Category Choices</h4>
+            <p>Choose what you'd like to see from here!</p>
+            <CategoriesList />
           </div>
         </div>
       </div>

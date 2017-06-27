@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import prefsList from './PrefsList';
-import unPrefsList from './UnPrefsList';
+import categoriesList from './CategoriesList';
 
-const rootReducer = combineReducers({ prefsList, unPrefsList });
+const rootReducer = combineReducers({ prefsList, categoriesList });
 
 export default rootReducer;

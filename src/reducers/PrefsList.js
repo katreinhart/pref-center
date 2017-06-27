@@ -5,7 +5,6 @@ import { IMPORT_PREFS, ADD_PREF, REMOVE_PREF, SORT_PREFS } from '../actions';
 function prefsList(state=[], action) {
   switch(action.type) {
     case IMPORT_PREFS:
-      console.log('importing...');
       let prefs = action.prefs.map((item) => item);
       return prefs;
     case ADD_PREF:
