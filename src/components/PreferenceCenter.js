@@ -1,24 +1,26 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { arrayMove } from 'react-sortable-hoc';
+import { connect } from 'react-redux';
 
 import PrefItem from './PrefItem';
 import UnPrefsList from './UnPrefsList';
 import PrefsList from './PrefsList';
 
-class PreferenceCenter extends Component  {
-  state = {
-    url: `http://localhost:8080/api/prefs/${this.props.customerID}`,
-    items: []
-  }
+import { sortPrefs, importPrefs } from '../actions';
 
-  loadPrefsFromServer(){
-    axios.get(this.state.url)
+class PreferenceCenter extends Component  {
+  constructor(props){
+    super(props);
+    state: {
+      prefsList: []
+    };
+  }
+  loadPrefsFromServer () {
+    axios.get(this.props.url)
       .then(res => {
         if(res.data.preferences) {
-          this.setState({
-            items: res.data.preferences
-          })
+          this.props.importPrefs(res.data.preferences);
         }
       }).catch(err => {
         console.error(err);
@@ -26,15 +28,16 @@ class PreferenceCenter extends Component  {
   }
 
   componentDidMount () {
+    // this needs updated so that data persists
     this.loadPrefsFromServer();
   }
 
   onSortEnd = ({oldIndex, newIndex}) => {
     this.setState({
-      items: arrayMove(this.state.items, oldIndex, newIndex)
+      prefsList: arrayMove(this.props.prefsList, oldIndex, newIndex)
     });
-    axios.put(this.state.url, {
-      "preferences": this.state.items
+    axios.put(this.props.url, {
+      "preferences": this.props.prefsList
     });
   }
 
@@ -44,7 +47,6 @@ class PreferenceCenter extends Component  {
         <div className="pref-list columns six">
           <PrefsList
             useDragHandle
-            items = {this.state.items}
             onSortEnd = {this.onSortEnd}
           />
         </div>
@@ -56,8 +58,10 @@ class PreferenceCenter extends Component  {
   }
 }
 
-PreferenceCenter.propTypes = {
-  customerID: React.PropTypes.string
+function mapStateToProps(state) {
+  return {
+    prefsList: state.prefsList
+  }
 }
 
-export default PreferenceCenter;
+export default connect(mapStateToProps, { sortPrefs, importPrefs })(PreferenceCenter);

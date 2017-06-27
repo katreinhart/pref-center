@@ -3,11 +3,7 @@ import { connect } from 'react-redux';
 import { addPref } from '../actions';
 
 class UnPrefsList extends Component {
-  // addPref(item) {
-  //   console.log("Adding pref", item);
-  // }
   render() {
-    console.log('this.props.unprefs', this.props.unprefs);
     return (
       <div>
         <ul>

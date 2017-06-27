@@ -3,7 +3,7 @@ import { SortableContainer, SortableHandle, SortableElement, arrayMove } from 'r
 import { connect } from 'react-redux';
 
 import PrefItem from './PrefItem';
-import { addPref, removePref } from '../actions';
+import { removePref } from '../actions';
 
 const DragHandle = SortableHandle(() => <span>&#9776; </span>);
 
@@ -35,4 +35,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { addPref, removePref })(PrefsList);
+export default connect(mapStateToProps, { removePref })(PrefsList);
