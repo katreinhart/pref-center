@@ -10,12 +10,7 @@ import PrefsList from './PrefsList';
 import { sortPrefs, importPrefs } from '../actions';
 
 class PreferenceCenter extends Component  {
-  constructor(props){
-    super(props);
-    state: {
-      prefsList: []
-    };
-  }
+
   loadPrefsFromServer () {
     axios.get(this.props.url)
       .then(res => {
@@ -28,17 +23,17 @@ class PreferenceCenter extends Component  {
   }
 
   componentDidMount () {
-    // this needs updated so that data persists
     this.loadPrefsFromServer();
   }
 
-  onSortEnd = ({oldIndex, newIndex}) => {
-    this.setState({
-      prefsList: arrayMove(this.props.prefsList, oldIndex, newIndex)
-    });
+  componentDidUpdate() {
     axios.put(this.props.url, {
       "preferences": this.props.prefsList
-    });
+    })
+  }
+
+  onSortEnd = ({oldIndex, newIndex}) => {
+    this.props.sortPrefs(arrayMove(this.props.prefsList, oldIndex, newIndex));
   }
 
   render() {
