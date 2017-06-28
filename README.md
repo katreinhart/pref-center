@@ -4,7 +4,7 @@ I wanted to create an interface where users can select, deselect and re-order va
 
 The user is presented with two columns of item categories. Items on the left are included in the user's preferences, and can be sorted by drag'n'drop and removed by clicking the X button. Items on the right are not included in the user's preferences, and can be added to the preferences by clicking the + button. 
 
-###Back End
+### Back End
 
 The back end is implemented in node.js and express, communicating with a MongoDB database via mongoose. 
 `server.js` contains the node/express server. I needed a bit more control over the `webpack.config.js` and `package.json` files to implement SCSS, so I opted not to use `create-react-app` and instead implement the server by hand. I relied heavily on several tutorials to get this section up and running; though this is far from my first node/express app, I do it infrequently enough that I needed a reminder on how to set up a server. 
