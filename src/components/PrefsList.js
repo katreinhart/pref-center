@@ -5,10 +5,12 @@ import { connect } from 'react-redux';
 import PrefItem from './PrefItem';
 import { removePref } from '../actions';
 
-const DragHandle = SortableHandle(() => <span className="drag-handle">&#9776; </span>);
+const DragHandle = SortableHandle(() => <span tabIndex = "0" className="drag-handle">&#9776; </span>);
 
 const SortablePreference = SortableElement(({value, id}) =>
   <li className = "list-item"
+    draggable="true"
+    aria-grabbed= "false"
     key= {id} ><DragHandle />
     <PrefItem value={value} />
   </li>

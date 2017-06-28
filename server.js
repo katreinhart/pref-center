@@ -6,15 +6,13 @@ import bodyParser from 'body-parser';
 
 const server = express();
 
-// var Preferences = require('./model/prefs.js');
-
 server.set('view engine', 'ejs');
 
 mongoose.connect(`mongodb://${mongoDBcred}@${mongoDBserv}/kat-mern-comment-box`);
 
 server.get('/', (req, res) => {
   res.render('index', {
-    content: 'Hello Preference Center!'
+    content: 'Loading...'
   });
 });
 

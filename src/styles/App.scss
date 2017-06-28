@@ -18,6 +18,7 @@ h4 {
 .container {
   margin: 0 auto;
   width: 100%;
+  max-width: none;
 }
 
 .row {
@@ -40,15 +41,14 @@ nav {
   color: white;
   min-height: 35px;
   padding: 10px 0;
-}
-
-nav ul li {
-  display: inline;
-  padding-right: 10px;
+  ul li {
+    display: inline;
+    padding-right: 10px;
+  }
 }
 
 .preference-menu {
-  min-height: 500px;
+  height: 90vh;
 }
 
 .menu-box {
@@ -60,17 +60,12 @@ nav ul li {
 .main {
   padding: 10px;
   margin: 0;
+  h3 {
+    text-align: center;
+  }
 }
 
-.main h3 {
-  text-align: center;
-}
-
-.sortable-list {
-  list-style: none;
-}
-
-.cats-list {
+.sortable-list, .cats-list {
   list-style: none;
 }
 
@@ -78,14 +73,12 @@ nav ul li {
   border: 1px solid grey;
   background-color: #CFEC93;
   width: 90%;
-  padding: 5px;
-  padding-left: 10px;
-}
-
-.list-item.un {
-  background-color: lighten(#CFEC93, 20%);
-  color: #666;
-  font-style: italic;
+  padding: 5px 5px 5px 10px;
+  &.un{
+    background-color: lighten(#CFEC93, 20%);
+    color: #666;
+    font-style: italic;
+  }
 }
 
 .pref-item {
@@ -96,9 +89,6 @@ nav ul li {
 
 .add-button, .remove-button {
   font-size: 1.4rem;
-}
-
-.add-button, .remove-button {
   cursor: pointer;
 }
 

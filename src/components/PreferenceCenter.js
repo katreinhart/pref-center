@@ -43,7 +43,7 @@ class PreferenceCenter extends Component  {
         <div className="row">
           <div className="pref-list columns six">
             <h4>My Categories</h4>
-            <p>Things I want to see! <em>Click & drag to reorder.</em></p>
+            <p>Things you want to see! <em>Click & drag the</em> &#9776; <em>handle to reorder.</em></p>
             <PrefsList
               useDragHandle
               onSortEnd = {this.onSortEnd}
