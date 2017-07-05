@@ -8,6 +8,7 @@ class PrefItem extends Component {
       <div className="pref-item"><span
         className="remove-button" tabIndex = "0"
         onKeyPress={(event) => {
+          //  if key pressed is space bar or enter key, treat as a click. 
           if(event.which === 32 || event.which === 13)
             this.props.removePref(this.props.value);
         }}

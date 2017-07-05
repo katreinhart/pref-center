@@ -10,12 +10,21 @@ import PrefsList from './PrefsList';
 import { sortPrefs, importPrefs } from '../actions';
 
 class PreferenceCenter extends Component  {
+  constructor() {
+    super();
+    this.state = {
+      name: ""
+    };
+  }
 
   loadPrefsFromServer () {
     axios.get(this.props.url)
       .then(res => {
         if(res.data.preferences) {
           this.props.importPrefs(res.data.preferences);
+          this.setState({
+            name: res.data.userName
+          });
         }
       }).catch(err => {
         console.error(err);
@@ -39,6 +48,14 @@ class PreferenceCenter extends Component  {
   render() {
     return(
       <div className="prefs-center">
+        <div className="row">
+          {
+            this.state.name !== "" ?
+              <p>Welcome back, {this.state.name}!</p>
+            :
+              <p></p>
+          }
+        </div>
         <div className="row"><p>Help us show you what you want to see on your homepage! You can add, remove, and re-order your preferences here.</p></div>
         <div className="row">
           <div className="pref-list columns six">

@@ -14,6 +14,7 @@ class CategoriesList extends Component {
                   <span
                     tabIndex = "0"
                     onKeyPress={(event) => {
+                      //  if key pressed is space bar or enter key, treat as a click. 
                       if(event.which === 32 || event.which === 13)
                         this.props.addPref(item);
                     }}

@@ -39,5 +39,10 @@ I wanted to use a drag & drop interface for sorting preferences but did not want
 ### Redux
 Adding Redux to the project was almost an afterthought but ended up solving the biggest challenge, namely, how do I let a number of components have access to the state of the application without making lots of database calls. Redux is a natural fit with React sharing the concept of immutable state. The actions I implemented reflect the actions of importing preferences from the server, adding and removing preferences, and sorting preferences. 
 
+### Accessibility
+I added keyboard accessibility for the add and remove functions. However, I have not yet figured out how to implement accessibility for the drag and drop functionality. 
+
 ### Room for Improvement
-Adding authentication and support for multiple users would be the next logical step - for now this only works for a single user and relies on hard-coded user ID in the URL. 
+Adding authentication and support for multiple users would be the next logical step - for now this only works for a single user and relies on hard-coded user ID in the URL.  
+
+Adding keyboard accessibility for drag and drop would be crucial for making this feature usable for folks with limited sight or poor motor control. 
