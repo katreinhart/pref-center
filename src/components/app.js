@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './header';
 import PreferenceCenter from './PreferenceCenter';
+import { API_HOST } from '../../config.js';
 
 import '../styles/App.scss';
 
