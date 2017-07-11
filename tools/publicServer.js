@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path';
 import open from 'open';
 import compression from 'compression';
-
+import apiRouter from './api';
 
 
 const port = process.env.PORT || 3000;
@@ -12,12 +12,12 @@ app.use(compression());
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
+  res.render('index', {
+    content: 'Loading...'
+  });
 });
 
-app.get('/api', function(req, res) {
-  res.send("Api initialized??");
-})
+app.use('/api', apiRouter);
 
 app.listen(port, function(err) {
   if (err) {
