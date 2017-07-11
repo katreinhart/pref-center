@@ -4,7 +4,6 @@ import open from 'open';
 import compression from 'compression';
 import apiRouter from '../api';
 
-
 const port = process.env.PORT || 3000;
 const app = express();
 
