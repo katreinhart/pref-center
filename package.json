@@ -4,15 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon --exec babel-node server.js --ignore public/",
     "build": "NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors",
-    "dev": "webpack -wd"
+    "dev": "webpack -wd --config ./webpack.dev.config.js",
+    "clean-public": "npm run remove-public && mkdir public",
+    "remove-public": "node_modules/.bin/rimraf ./public",
+    "build:html": "babel-node tools/buildHtml.js",
+    "prebuild": "npm-run-all clean-public lint build:html",
+    "build": "babel-node tools/build.js",
+    "postbuild": "babel-node tools/publicServer.js"
   },
   "author": "Kat Reinhart",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.16.2",
+    "babel-polyfill": "6.8.0",
+    "babel-cli": "6.8.0",
     "body-parser": "^1.17.2",
+    "cheerio": "^0.20.0",
+    "colors": "1.1.2",
     "ejs": "^2.5.6",
     "express": "^4.15.3",
     "foreman": "^2.0.0",
@@ -22,7 +32,8 @@
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-sortable-hoc": "^0.6.3",
-    "redux": "^3.7.0"
+    "redux": "^3.7.0",
+    "serve-favicon": "^2.3.0",
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

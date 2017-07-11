@@ -1,4 +1,4 @@
-import config from './config';
+import config, { mongoDBcred, mongoDBserv } from './config';
 import apiRouter from './api';
 import mongoose from 'mongoose';
 import express from 'express';

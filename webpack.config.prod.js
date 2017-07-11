@@ -1,7 +1,7 @@
-const path = require('path');
+const path = require ('path');
 const webpack = require('webpack');
 
-module.exports = {
+export default {
   devtool: 'source-map',
 
   entry: [
@@ -24,23 +24,23 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production')
+        'NODE_ENV': JSON.stringify('production'),
+        'API_HOST': 'https://pref-center.herokuapp.com'
       }
     })
   ],
 
   module: {
     loaders: [
-      { test: /\.js?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/ },
-      { test: /\.scss?$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"],
-        include: path.join(__dirname, 'src', 'styles') },
-      { test: /\.png$/,
-        loader: 'file' },
-      { test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-        loader: 'file'}
+      {
+        test: /\.js?$/,
+        loader: 'babel',
+        exclude: /node_modules/
+      },{
+        test: /\.scss?$/,
+        loader: 'style!css!sass',
+        include: path.join(__dirname, 'src', 'styles')
+      }
     ]
   }
 }

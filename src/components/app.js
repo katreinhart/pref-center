@@ -7,7 +7,7 @@ import '../styles/App.scss';
 class App extends Component {
   state = {
       pageHeader: "Preference Center",
-      url: `http://localhost:8080/api/prefs/593f37daaf06a249f51fa649`
+      url: `${API_HOST}/api/prefs/593f37daaf06a249f51fa649`
       //
   };
   render() {
