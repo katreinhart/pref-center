@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path';
 import open from 'open';
 import compression from 'compression';
-import apiRouter from './api';
+import apiRouter from '../api';
 
 
 const port = process.env.PORT || 3000;
